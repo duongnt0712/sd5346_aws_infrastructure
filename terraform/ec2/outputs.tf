@@ -3,9 +3,9 @@ output "jenkins_public_ip" {
 }
 
 output "jenkins_ssh_command" {
-  value = "ssh -i ${var.jenkin_key_name}.pem ubuntu@${aws_instance.jenkins.public_ip}"
+  value = "ssh -i ${var.jenkin_key_name}.pem ec2-user@${aws_instance.jenkins.public_ip}"
 }
 
 output "jenkins_initial_admin_password_hint" {
-  value = "cat /home/ubuntu/jenkins_initial_password.txt"
+  value = "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
 }
