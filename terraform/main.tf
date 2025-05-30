@@ -40,5 +40,5 @@ module "eks" {
 
   vpc_id                     = module.network.vpc_id
   eks_node_groups_subnet_ids = module.network.private_subnets
-  control_plane_subnet_ids   = module.network.public_subnets
+  control_plane_subnet_ids   = module.network.private_subnets
 }
