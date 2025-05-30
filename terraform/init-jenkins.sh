@@ -25,10 +25,7 @@ sudo systemctl enable docker
 # Add Jenkins to Docker group
 sudo usermod -a -G docker jenkins
 
-# Start Jenkins service
-echo "Starting Jenkins..."
-sudo systemctl enable jenkins
-sudo systemctl start jenkins
+
 
 # === Install latest AWS CLI ===
 echo "Installing AWS CLI v2..."
@@ -41,6 +38,11 @@ echo "Installing kubectl..."
 sudo curl -LO https://s3.us-west-2.amazonaws.com/amazon-eks/1.31.2/2024-11-15/bin/linux/amd64/kubectl
 sudo chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
+
+# Start Jenkins service
+echo "Starting Jenkins..."
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
 
 # Output completion message
 echo "Jenkins, Docker, Git, and kubectl have been successfully installed and started."
