@@ -19,6 +19,7 @@ module "network" {
   name   = "practical-devops-network"
 
   vpc_cidr               = "10.0.0.0/16"
+  single_nat_gateway     = true
   one_nat_gateway_per_az = false
 
   tags = module.network-tags.tags
