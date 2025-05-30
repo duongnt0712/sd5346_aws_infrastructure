@@ -17,7 +17,7 @@ pipeline {
     stage('Deploy to EKS') {
       steps {
         sh '''
-          aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
+          aws eks update-kubeconfig --region $AWS_REGION --name $EKS_CLUSTER_NAME
           kubectl apply -f kubernetes/mongodb.yaml
           kubectl apply -f kubernetes/backend.yaml
           kubectl apply -f kubernetes/frontend.yaml
