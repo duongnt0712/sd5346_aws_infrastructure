@@ -18,7 +18,8 @@ module "network" {
   source = "./modules/network"
   name   = "practical-devops-network"
 
-  vpc_cidr = "10.0.0.0/16"
+  vpc_cidr               = "10.0.0.0/16"
+  one_nat_gateway_per_az = false
 
   tags = module.network-tags.tags
 }
